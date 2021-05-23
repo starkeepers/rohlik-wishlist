@@ -1,0 +1,68 @@
+/* https://www.w3schools.com/howto/howto_js_popup.asp */
+#chcibox {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) 
+  left: 50%;
+  bottom: 125%;
+*/
+#chciroh {
+  visibility: hidden;
+  z-index: 500; /* need > 101 */
+  position: fixed; /* absolute */
+  min-width: 500px;
+  margin-top: -65px;
+  margin-left: 180px;
+  background-color: brown;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+/* Popup arrow */
+#chciroh::after {
+  content: "";
+  position: absolute;
+  top: 000%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+#chcibox .show {
+  visibility: visible;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+} 
+
+/* ---------------------  list of wishes ------------------- */
+
+#chciroh li {
+  padding: 12px;
+  background-color: brown;
+}
+#chciroh li a {
+  color: white;
+  text-decoration: none;
+}
+#chciroh li a.descr:hover {
+  color: yellow;
+  text-decoration: underline dotted;
+}
+
+#chciroh div.wish {
+  display: flex;
+  justify-content: space-between;
+}
